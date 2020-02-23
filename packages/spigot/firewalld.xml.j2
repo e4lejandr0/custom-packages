@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service>
+  <short>{{rpm_name}}</short>
+  <description>{{rpm_description}}</description>
+  {% for port in spigot_ports %}
+  <port port="{{port}}" protocol="tcp"/>
+  {% endfor %}
+</service>

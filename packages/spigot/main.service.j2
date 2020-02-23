@@ -1,0 +1,13 @@
+[Service]
+ExecStart=/usr/bin/java -jar {{spigot_dir}}/{{rpm_name}}.jar
+User={{rpm_name}}
+Group={{rpm_name}}
+SuccessExitStatus=143
+WorkingDirectory={{spigot_dir}}
+
+[Install]
+WantedBy=multi-user.target
+
+[Unit]
+After=network-online.target
+
