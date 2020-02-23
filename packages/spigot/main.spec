@@ -55,6 +55,10 @@ ansible -m template \
     }' \
     localhost
 
+%clean
+rm %{SOURCE0}
+rm -rf %{buildroot}
+
 %pre
 if ! getent passwd %{name} 2>/dev/null >&2; then
    useradd --home-dir %{spigot_datadir} --shell /sbin/nologin --system %{name}
